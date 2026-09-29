@@ -122,11 +122,11 @@ h1:first-child, h2:first-child { margin-top: 0; }
 /* ---------- intro with floated portrait ---------- */
 .portrait {
   float: right;
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 2px 0 14px 24px;
+  margin: -44px 0 14px 24px;
   border: 1px solid var(--rule);
   background: var(--rule);
   shape-outside: circle();
