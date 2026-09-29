@@ -142,9 +142,8 @@ ul.tight li { margin-bottom: 3px; }
 ul.plain { list-style: none; margin: 0; padding: 0; }
 
 /* ---------- people ---------- */
-.person { margin-bottom: 14px; }
-.person .name { font-weight: 700; }
-.person .note-txt { color: var(--muted); }
+.person { margin-bottom: 0; }
+.person b { font-weight: 700; }
 
 /* ---------- publications ---------- */
 .pub { margin-bottom: 20px; }
