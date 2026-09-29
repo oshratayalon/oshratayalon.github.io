@@ -1,0 +1,183 @@
+/* ============================================================
+   SoTI Lab — shared stylesheet
+   Monospace academic layout. Edit colours/fonts here; every
+   page uses this one file.
+   ============================================================ */
+
+:root {
+  --bg: #ffffff;
+  --text: #272727;
+  --muted: #6a6a6a;
+  --rule: #e2e2e2;
+  --link: #005732;
+  --link-hover: #00301b;
+  --highlight: #b23b2e;
+  --measure: 700px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14181a;
+    --text: #dfe3e2;
+    --muted: #9aa3a0;
+    --rule: #2b3234;
+    --link: #6fc79a;
+    --link-hover: #9ee0bc;
+    --highlight: #e08a7d;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14181a;
+  --text: #dfe3e2;
+  --muted: #9aa3a0;
+  --rule: #2b3234;
+  --link: #6fc79a;
+  --link-hover: #9ee0bc;
+  --highlight: #e08a7d;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inconsolata", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+p { margin: 0 0 1em; }
+
+/* ---------- navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  padding: 34px 16px 30px;
+}
+#author-name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+#author-name:hover { text-decoration: none; color: var(--link); }
+.site-sub {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 2px;
+}
+#navlist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 6px;
+  font-size: 0.97rem;
+}
+#navlist li::after {
+  content: "/";
+  color: var(--muted);
+  margin-left: 6px;
+}
+#navlist li:last-child::after { content: ""; margin: 0; }
+#navlist a[aria-current="page"] { color: var(--text); font-weight: 700; }
+
+/* ---------- headings ---------- */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0 0 18px;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 38px 0 14px;
+  line-height: 1.3;
+}
+h3 {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin: 26px 0 10px;
+}
+h1:first-child, h2:first-child { margin-top: 0; }
+
+/* ---------- intro with floated portrait ---------- */
+.portrait {
+  float: right;
+  width: 168px;
+  height: 168px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 4px 0 18px 26px;
+  border: 1px solid var(--rule);
+  background: var(--rule);
+  shape-outside: circle();
+}
+.clearfix::after { content: ""; display: block; clear: both; }
+
+.note { color: var(--highlight); }
+
+/* ---------- lists ---------- */
+ul.tight { margin: 0 0 1em; padding-left: 22px; }
+ul.tight li { margin-bottom: 3px; }
+
+ul.plain { list-style: none; margin: 0; padding: 0; }
+
+/* ---------- people ---------- */
+.person { margin-bottom: 14px; }
+.person .name { font-weight: 700; }
+.person .note-txt { color: var(--muted); }
+
+/* ---------- publications ---------- */
+.pub { margin-bottom: 20px; }
+.pub .title { font-weight: 700; }
+.pub .authors { }
+.pub .venue { color: var(--muted); }
+.pub .venue em { font-style: italic; }
+.self { text-decoration: underline; text-underline-offset: 2px; }
+
+/* ---------- teaching ---------- */
+.term { margin-bottom: 18px; }
+.term .when { font-weight: 700; }
+
+/* ---------- footer ---------- */
+footer {
+  margin-top: 56px;
+  padding: 22px 0 60px;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer a { color: var(--link); }
+
+@media (max-width: 560px) {
+  .navbar { padding-top: 26px; padding-bottom: 22px; }
+  .portrait {
+    float: none;
+    display: block;
+    margin: 0 0 20px;
+    width: 140px;
+    height: 140px;
+  }
+}
