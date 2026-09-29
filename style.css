@@ -44,7 +44,7 @@ body {
   color: var(--text);
   font-family: "Inconsolata", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.32;
 }
 
 .container {
@@ -59,30 +59,28 @@ a {
 }
 a:hover { color: var(--link-hover); text-decoration: underline; }
 
-p { margin: 0 0 1em; }
+p { margin: 0 0 0.9em; }
 
 /* ---------- navbar ---------- */
 .navbar {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 8px 24px;
-  padding: 34px 16px 30px;
+  gap: 10px 38px;
+  padding: 34px 16px 26px;
 }
 #author-name {
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: var(--text);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
 }
 #author-name:hover { text-decoration: none; color: var(--link); }
 .site-sub {
-  display: block;
-  font-size: 0.82rem;
-  font-weight: 400;
+  margin: -16px 0 22px;
+  font-size: 0.88rem;
   color: var(--muted);
-  margin-top: 2px;
 }
 #navlist {
   list-style: none;
@@ -111,7 +109,7 @@ h1 {
 h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  margin: 38px 0 14px;
+  margin: 30px 0 12px;
   line-height: 1.3;
 }
 h3 {
@@ -124,11 +122,11 @@ h1:first-child, h2:first-child { margin-top: 0; }
 /* ---------- intro with floated portrait ---------- */
 .portrait {
   float: right;
-  width: 168px;
-  height: 168px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  margin: 4px 0 18px 26px;
+  margin: 2px 0 14px 24px;
   border: 1px solid var(--rule);
   background: var(--rule);
   shape-outside: circle();
